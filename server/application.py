@@ -37,7 +37,7 @@ def detect_faces_1():
     if faces.total > 0:
         return_data = { 'status':'success', 'faces':[] }
         for face in faces:
-            return_data['faces'].append({ 'se':{'x':face.x, 'y':face.y}, 'nw':{'x':face.x+face.width, 'y':face.y+face.height }})
+            return_data['faces'].append({ 'sw':{'x':face.x, 'y':face.y}, 'ne':{'x':face.x+face.width, 'y':face.y+face.height }})
         return jsonify(return_data)
     
     return jsonify({'status':'success', 'faces':[] })
