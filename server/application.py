@@ -32,7 +32,7 @@ def detect_faces_1():
     cvClearMemStorage(storage)
     cvEqualizeHist(grayscale, grayscale)
     cascade = cvLoadHaarClassifierCascade('%s/haarcascade_frontalface_default.xml' % HAARCASCADES_DIR, cvSize(1,1))
-    faces = cvHaarDetectObjects(grayscale, cascade, storage, 1.2, 2, CV_HAAR_DO_CANNY_PRUNING, cvSize(100,100))
+    faces = cvHaarDetectObjects(grayscale, cascade, storage, 1.1, 2, CV_HAAR_DO_CANNY_PRUNING, cvSize(100,100))
 
     if faces.total > 0:
         return_data = { 'status':'success', 'faces':[] }
